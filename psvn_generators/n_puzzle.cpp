@@ -68,4 +68,9 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < R; ++i)
         for (int j = 0; j < C; ++j)
             print_rules(i, j, mat);
+    printf("\n");
+
+    printf("GOAL b");
+    for (int i = 1; i < R * C; ++i) printf(" %d", i);
+    printf("\n");
 }
