@@ -17,4 +17,3 @@ public:
 
     Node* create_succ(int rule_id);
 };
-

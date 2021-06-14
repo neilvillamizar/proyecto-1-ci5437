@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include "Node.hpp"
+#include "SearchAlgorithms.hpp"
 
 using namespace std;
 
@@ -22,7 +23,16 @@ int main() {
         return -2;
     }
 
+    Node *goal = bfs(root);
 
+    if (goal == nullptr)
+        printf("No se logro llegar a un estado objetivo\n");
+    else {
+        sprint_state(OUTPUT, 256, goal->state);
+        printf("GOAL : %s\n", OUTPUT);
+
+        print_nodes_per_height();
+    }
 
 
 

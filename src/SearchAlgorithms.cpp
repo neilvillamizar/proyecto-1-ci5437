@@ -1,5 +1,10 @@
 #include "SearchAlgorithms.hpp"
 
+vector<int> NODES_PER_HEIGHT;
+
+clock_t START, END;
+double MAX_TIME = 15 * 60;
+
 // breadth first search without pruning
 Node* bfs(Node *root) {
     START = clock();
@@ -30,4 +35,9 @@ Node* bfs(Node *root) {
             break;
     }
     return nullptr;
+}
+
+void print_nodes_per_height() {
+    for (int i = 0; i < NODES_PER_HEIGHT.size(); ++i)
+        printf("%d : %d\n", i, NODES_PER_HEIGHT[i]);
 }
