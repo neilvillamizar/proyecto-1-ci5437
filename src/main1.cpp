@@ -32,10 +32,12 @@ int main() {
         printf("Error en el valor dado\n");
         return -3;
     }
-    
+
     Node *goal;
     if (aux == 1)
         goal = bfs(root);
+    else if (aux == 2)
+        goal = bfs_with_pruning(root);
 
     if (goal == nullptr)
         printf("No se logro llegar a un estado objetivo\n");

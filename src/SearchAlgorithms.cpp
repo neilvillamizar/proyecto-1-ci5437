@@ -35,6 +35,7 @@ Node* bfs(Node *root) {
         if (current_time >= MAX_TIME_WITHOUT_PRUN)
             break;
     }
+    END = clock();
     return nullptr;
 }
 
@@ -78,6 +79,7 @@ Node* bfs_with_pruning(Node *root) {
         if (current_time >= MAX_TIME_WITH_PRUN)
             break;
     }
+    END = clock();
     return nullptr;
 }
 
