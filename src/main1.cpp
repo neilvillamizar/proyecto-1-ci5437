@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdio.h>
-#include "Node.hpp"
-#include "SearchAlgorithms.hpp"
+#include "node.hpp"
+#include "search_algorithms.hpp"
 
 using namespace std;
 
@@ -10,7 +10,7 @@ const int MX_INP_SZ = 256;
 char INPUT[MX_INP_SZ], OUTPUT[MX_INP_SZ];
 
 int main() {
-    Node *root = new Node;
+    node *root = new node;
     printf("De el estado inicial\n");
     if (fgets(INPUT, sizeof(INPUT), stdin) == NULL) {
         printf("Error en el estado dado\n");
@@ -33,7 +33,7 @@ int main() {
         return -3;
     }
 
-    Node *goal;
+    node *goal;
     if (aux == 1)
         goal = bfs(root);
     else if (aux == 2)

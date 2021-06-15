@@ -1,20 +1,20 @@
-#include "Node.hpp"
+#include "node.hpp"
 
 using namespace std;
 
-Node::Node() {
+node::node() {
     state = new state_t;
     parent = NULL;
     action = -1;
     h = g = 0;
 }
 
-Node::~Node() {
+node::~node() {
     delete state;
 }
 
-Node* Node::create_succ(int rule_id) {
-    Node *succ = new Node;
+node* node::create_succ(int rule_id) {
+    node *succ = new node;
     succ->parent = this;
     succ->h = h + 1;
     succ->g = g + get_fwd_rule_cost(rule_id);

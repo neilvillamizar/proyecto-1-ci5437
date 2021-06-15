@@ -5,14 +5,15 @@
 #include <time.h>
 #include <set>
 #include <stdio.h>
-#include "Node.hpp"
+#include "node.hpp"
+#include "state_set.hpp"
 
 using namespace std;
 
 // breadth first search without pruning
-Node* bfs(Node *root);
+node* bfs(node *root);
 
 // breadth first search with pruning
-Node* bfs_with_pruning(Node *root);
+node* bfs_with_pruning(node *root);
 
 void print_nodes_per_height();

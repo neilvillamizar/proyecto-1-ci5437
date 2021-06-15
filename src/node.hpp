@@ -2,18 +2,17 @@
 
 using namespace std;
 
-class Node
-{
+class node {
 public:
     state_t *state; // psvn state
-    Node *parent; // node father
+    node *parent; // node father
     int action; // action that generated this node
     int h; // height
     int g; // cost
 
-    Node();
+    node();
 
-    ~Node();
+    ~node();
 
-    Node* create_succ(int rule_id);
+    node* create_succ(int rule_id);
 };
