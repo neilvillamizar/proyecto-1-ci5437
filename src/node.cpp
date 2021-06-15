@@ -4,7 +4,7 @@ using namespace std;
 
 node::node() {
     state = new state_t;
-    parent = NULL;
+    parent = nullptr;
     action = -1;
     h = g = 0;
 }
@@ -22,3 +22,13 @@ node* node::create_succ(int rule_id) {
     return succ;
 }
 
+vector<node*> node::get_path() {
+    vector<node*> ret;
+    node *it = this;
+    while (it != nullptr) {
+        ret.push_back(it);
+        it = it->parent;
+    }
+    reverse(ret.begin(), ret.end());
+    return ret;
+}

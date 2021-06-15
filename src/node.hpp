@@ -1,5 +1,8 @@
 #pragma once
 
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
 class node {
@@ -15,4 +18,6 @@ public:
     ~node();
 
     node* create_succ(int rule_id);
+
+    vector<node*> get_path();
 };
