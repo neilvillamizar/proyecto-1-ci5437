@@ -2,6 +2,7 @@
 
 vector<int> NODES_PER_HEIGHT;
 
+const int SEARCH_ALG_INF = 1e9;
 clock_t START, END;
 double MAX_TIME_WITHOUT_PRUN = 1 * 60;
 double MAX_TIME_WITH_PRUN = 15 * 60;
@@ -90,9 +91,9 @@ node* bfs_with_pruning(node *root) {
         while ((rule_id = next_ruleid(&my_it)) >= 0) {
             node *succ = curr->create_succ(rule_id);
 
-            if (!visited.find(succ)) { 
+            if (!visited.find(succ)) {
                 ord.push(succ);
-                visited.insert(succ); 
+                visited.insert(succ);
             }
             else
                 delete succ;
@@ -106,6 +107,58 @@ node* bfs_with_pruning(node *root) {
     END = clock();
     return nullptr;
 }
+
+/*
+    a_star:
+
+    param:
+        root : pointer to a node
+        h : heuristic to use in a_star
+
+    return:
+        pointer to the goal state or null if the goal wasnt reached
+
+
+*/
+node* a_star(node *root, int (*h)(node*)) {
+    NODES_PER_HEIGHT.clear();
+    START = clock();
+
+    state_map min_cost;
+    priority_queue<pair<int, node*>> pq;
+
+    pq.push({h(root), root});
+
+    while (!pq.empty()) {
+        node *u = pq.top().second; pq.pop();
+
+        if (u->g < min_cost.get_cost(u)) {
+            min_cost.insert(u, u->g);
+
+            if (u->h >= NODES_PER_HEIGHT.size())
+                NODES_PER_HEIGHT.push_back(1);
+            else
+                ++NODES_PER_HEIGHT[u->h];
+
+            if (is_goal(u->state))
+                return u;
+
+            ruleid_iterator_t my_it;
+            init_fwd_iter(&my_it, u->state);
+            int rule_id;
+            while ((rule_id = next_ruleid(&my_it)) >= 0) {
+                node *succ = u->create_succ(rule_id);
+
+                if (h(succ) < SEARCH_ALG_INF)
+                    pq.push({succ->g + h(succ), succ});
+            }
+        }
+    }
+
+    END = clock();
+    return nullptr;
+}
+
 
 /*
     print_nodes_per_height:

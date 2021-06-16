@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include "node.hpp"
 #include "state_set.hpp"
+#include "state_map.hpp"
 
 using namespace std;
 
@@ -15,5 +16,7 @@ node* bfs(node *root);
 
 // breadth first search with pruning
 node* bfs_with_pruning(node *root);
+
+node* a_star(node *root, int (*h)(node*));
 
 void print_nodes_per_height();

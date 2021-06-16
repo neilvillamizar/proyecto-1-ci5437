@@ -2,9 +2,11 @@
 
 using namespace std;
 
+const int STATE_MAP_INF = 1e9;
+
 /*
     insert:
-    
+
     param:
         u = pointer to a node
         c = cost of the node
@@ -25,10 +27,10 @@ void state_map::insert(node *u, int c) {
 
 /*
     erase:
-    
+
     param:
         u = pointer to a node
-    
+
     deletes the given node from the hash table
 */
 void state_map::erase(node *u) {
@@ -63,12 +65,12 @@ bool state_map::find(node *u) {
     param:
         u = pointer to a node
 
-    returns the cost of the given node or -1 if it doesnt exist
+    returns the cost of the given node or INF if it doesnt exist
 */
 int state_map::get_cost(node *u) {
     uint64_t hash = hash_state(u->state);
     for (auto it = table[hash].begin(); it != table[hash].end(); it++)
         if (compare_states(u->state, it->first->state) == 0)
             return it->second;
-    return -1;
+    return STATE_MAP_INF;
 }
