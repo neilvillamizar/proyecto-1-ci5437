@@ -6,8 +6,20 @@ clock_t START, END;
 double MAX_TIME_WITHOUT_PRUN = 1 * 60;
 double MAX_TIME_WITH_PRUN = 15 * 60;
 
-// breadth first search without pruning
+/*
+    bfs:
+
+    param:
+        root = pointer to a node
+
+    return:
+        pointer to the goal state or null if the goal wasnt reached
+
+    breadth first search implementation without pruning, limit time
+    of 1 minute because it generates a lot of nodes
+*/
 node* bfs(node *root) {
+    NODES_PER_HEIGHT.clear();
     START = clock();
 
     queue<node*> ord;
@@ -39,7 +51,20 @@ node* bfs(node *root) {
     return nullptr;
 }
 
+/*
+    bfs_with_pruning:
+
+    param:
+        root = pointer to a node
+
+    return:
+        pointer to the goal state or null if the goal wasnt reached
+
+    breadth first search implementation with pruning, limit time
+    of 15 minutes
+*/
 node* bfs_with_pruning(node *root) {
+    NODES_PER_HEIGHT.clear();
     START = clock();
 
     queue<node*> ord;
@@ -82,6 +107,11 @@ node* bfs_with_pruning(node *root) {
     return nullptr;
 }
 
+/*
+    print_nodes_per_height:
+
+    prints the nodes for each height of the last runned algorithm
+*/
 void print_nodes_per_height() {
     for (int i = 0; i < NODES_PER_HEIGHT.size(); ++i)
         printf("%d : %d\n", i, NODES_PER_HEIGHT[i]);

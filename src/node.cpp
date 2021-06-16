@@ -2,6 +2,12 @@
 
 using namespace std;
 
+/*
+    constructor:
+
+    creates a new node, reserves space for the state and
+    sets all variable to null values
+*/
 node::node() {
     state = new state_t;
     parent = nullptr;
@@ -9,10 +15,27 @@ node::node() {
     h = g = 0;
 }
 
+/*
+    destructor:
+
+    frees the space of the state
+*/
 node::~node() {
     delete state;
 }
 
+/*
+    create_succ:
+
+    param:
+        rule_id = id of the psvn rule
+
+    return:
+        pointer to a node, the succesor of the current node
+
+    creates a succesor node of the current one using the given
+    rule id
+*/
 node* node::create_succ(int rule_id) {
     node *succ = new node;
     succ->parent = this;
@@ -22,6 +45,12 @@ node* node::create_succ(int rule_id) {
     return succ;
 }
 
+/*
+    get_path:
+
+    return:
+        vector of node pointers representing the path to the current node
+*/
 vector<node*> node::get_path() {
     vector<node*> ret;
     node *it = this;
