@@ -6,9 +6,9 @@ using namespace std;
 #include <string>
 #include "node.hpp"
 
-int manhattan_puzzle15(node *u);
+int manhattan_puzzle15(state_t *u);
 
-int manhattan_puzzle24(node *u);
+int manhattan_puzzle24(state_t *u);
 
-vector<string> split_state_str(node *u);
+vector<string> split_state_str(state_t *u);
 
