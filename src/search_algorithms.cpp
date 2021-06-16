@@ -127,7 +127,7 @@ node* a_star(node *root, int (*h)(node*)) {
     state_map min_cost;
     priority_queue<pair<int, node*>> pq;
 
-    pq.push({h(root), root});
+    pq.push({ -h(root), root});
 
     while (!pq.empty()) {
         node *u = pq.top().second; pq.pop();
@@ -150,7 +150,7 @@ node* a_star(node *root, int (*h)(node*)) {
                 node *succ = u->create_succ(rule_id);
 
                 if (h(succ) < SEARCH_ALG_INF)
-                    pq.push({succ->g + h(succ), succ});
+                    pq.push({ -(succ->g + h(succ)), succ});
             }
         }
     }

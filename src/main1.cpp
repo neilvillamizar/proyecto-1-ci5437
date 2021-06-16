@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdio.h>
+#include <vector>
 #include "node.hpp"
 #include "search_algorithms.hpp"
 #include "heuristics.hpp"
@@ -47,7 +48,14 @@ int main() {
         printf("No se logro llegar a un estado objetivo\n");
     else {
         sprint_state(OUTPUT, 256, goal->state);
-        printf("GOAL : %s\n", OUTPUT);
+        printf("GOAL : %s\n\n", OUTPUT);
+        printf("PATH : \n");
+        auto path = goal->get_path();
+        for (int i = 0; i < path.size(); ++i) {
+            sprint_state(OUTPUT, 256, path[i]->state);
+            printf("\t%s\n", OUTPUT);
+        }
+        printf("\n");
     }
     print_nodes_per_height();
 
