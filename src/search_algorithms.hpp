@@ -19,4 +19,6 @@ node* bfs_with_pruning(node *root);
 
 node* a_star(node *root, int (*h)(node*));
 
+pair<node*, vector<int>> ida_star(node *root, int (*h)(node*));
+
 void print_nodes_per_height();

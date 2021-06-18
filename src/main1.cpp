@@ -29,6 +29,7 @@ int main() {
     printf("1) Bfs sin eliminacion de duplicados\n");
     printf("2) Bfs con eliminacion parcial de duplicados\n");
     printf("3) A* con distancia manhattan\n");
+    printf("4) IDA* con distancia manhattan y uso eficiente de memoria\n");
 
     int aux;
     if (scanf("%d", &aux) <= 0) {
@@ -43,10 +44,12 @@ int main() {
         goal = bfs_with_pruning(root);
     else if (aux == 3)
         goal = a_star(root, manhattan_puzzle15);
+    else if (aux == 4)
+        goal = ida_star(root, manhattan_puzzle15).first;
 
     if (goal == nullptr)
         printf("No se logro llegar a un estado objetivo\n");
-    else {
+    else if (aux <= 3) {
         sprint_state(OUTPUT, 256, goal->state);
         printf("GOAL : %s\n\n", OUTPUT);
         printf("PATH : \n");
@@ -56,6 +59,10 @@ int main() {
             printf("\t%s\n", OUTPUT);
         }
         printf("\n");
+    }
+    else if (aux == 4) {
+        sprint_state(OUTPUT, 256, goal->state);
+        printf("GOAL : %s\n\n", OUTPUT);
     }
     print_nodes_per_height();
 

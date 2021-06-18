@@ -39,10 +39,43 @@ node::~node() {
 node* node::create_succ(int rule_id) {
     node *succ = new node;
     succ->parent = this;
+    succ->action = rule_id;
     succ->h = h + 1;
     succ->g = g + get_fwd_rule_cost(rule_id);
     apply_fwd_rule(rule_id, state, succ->state);
     return succ;
+}
+
+/*
+    apply_fwd:
+
+    param:
+        rule_id = id of the psvn rule
+
+    changes the state of the current node by applying the forward rule
+    to it, here we lose control of parent, h, g and action
+*/
+void node::apply_fwd(int rule_id) {
+    state_t *tmp = new state_t;
+    copy_state(tmp, state);
+    apply_fwd_rule(rule_id, tmp, state);
+    delete tmp;
+}
+
+/*
+    apply_bwd:
+
+    param:
+        rule_id = id of the psvn rule
+
+    changes the state of the current node by applying the backward rule
+    to it, here we lose control of parent, h, g and action
+*/
+void node::apply_bwd(int rule_id) {
+    state_t *tmp = new state_t;
+    copy_state(tmp, state);
+    apply_bwd_rule(rule_id, tmp, state);
+    delete tmp;
 }
 
 /*

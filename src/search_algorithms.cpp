@@ -160,6 +160,99 @@ node* a_star(node *root, int (*h)(node*)) {
 }
 
 
+// global variables for ida*
+vector<int> ida_path;
+state_set ida_visited;
+
+/*
+    ida_star_expansion:
+
+    param:
+        bound : int representing the max node cost to expand
+        g : current node cost
+        h : heuristic
+        u : pointer to the current node
+
+    return:
+        bool representing if a goal was found and an int representing
+        the next bound to iterate on
+
+    efficient implementation of ida_star in memory, only using one node
+    and storing the ids of the rules on ida_path
+*/
+pair<bool, int> ida_star_expansion(int bound, int g, int (*h)(node*), node *u) {
+    int hval = h(u);
+    int f = g + hval;
+    if (f > bound || ida_visited.find(u))
+        return {false, f};
+
+    if (ida_path.size() >= NODES_PER_HEIGHT.size())
+        NODES_PER_HEIGHT.push_back(1);
+    else
+        ++NODES_PER_HEIGHT[ida_path.size()];
+
+    if (hval == 0)
+        return {true, g};
+
+    ida_visited.insert(u);
+
+    int t = SEARCH_ALG_INF;
+    ruleid_iterator_t my_it;
+    init_fwd_iter(&my_it, u->state);
+    int rule_id;
+    while ((rule_id = next_ruleid(&my_it)) >= 0) {
+        int cost = g + get_fwd_rule_cost(rule_id);
+        u->apply_fwd(rule_id);
+
+        if (h(u) < SEARCH_ALG_INF) {
+            ida_path.push_back(rule_id);
+            auto p = ida_star_expansion(bound, cost, h, u);
+            if (p.first) {
+                ida_visited.erase(u);
+                return p;
+            }
+            t = min(t, p.second);
+            ida_path.pop_back();
+        }
+
+        u->apply_bwd(rule_id);
+    }
+    ida_visited.erase(u);
+    return {false, t};
+}
+
+/*
+    ida_star:
+
+    param:
+        root : pointer to a node
+        h : heuristic
+
+    return:
+        pointer to a goal and the vector of rule ids used
+*/
+pair<node*, vector<int>> ida_star(node *root, int (*h)(node*)) {
+    NODES_PER_HEIGHT.clear();
+    START = clock();
+    node *u = new node;
+    int bound = h(root);
+    while (bound < SEARCH_ALG_INF) {
+        copy_state(u->state, root->state);
+        auto p = ida_star_expansion(bound, 0, h, u);
+        if (p.first) {
+            END = clock();
+            return {u, ida_path};
+        }
+        bound = p.second;
+    }
+    END = clock();
+    return {nullptr, ida_path};
+}
+
+
+
+
+
 /*
     print_nodes_per_height:
 

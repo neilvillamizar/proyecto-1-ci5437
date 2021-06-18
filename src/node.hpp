@@ -19,5 +19,9 @@ public:
 
     node* create_succ(int rule_id);
 
+    void apply_fwd(int rule_id);
+
+    void apply_bwd(int rule_id);
+
     vector<node*> get_path();
 };
