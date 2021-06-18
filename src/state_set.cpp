@@ -39,13 +39,15 @@ void state_set::insert(node *u) {
     param:
         u = pointer to a node
 
-    inserts the given node in the set if it doesnt exist already
+    deletes the given node if it exists
 */
 void state_set::erase(node *u) {
-    int hash = hash_state(u->state);
-    for (auto it = mp[hash].begin(); it != mp[hash].end(); ++it)
-        if (compare_states((*it)->state, u->state)) {
+    uint64_t hash = hash_state(u->state);
+    for (auto it = mp[hash].begin(); it != mp[hash].end(); ++it) {
+        if (compare_states((*it)->state, u->state) == 0) {
             mp[hash].erase(it);
             return;
         }
+    }
 }
+//3 14 9 11 5 4 8 2 13 12 6 7 10 1 15 b

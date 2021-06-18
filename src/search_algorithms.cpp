@@ -5,7 +5,7 @@ vector<int> NODES_PER_HEIGHT;
 const int SEARCH_ALG_INF = 1e9;
 clock_t START, END;
 double MAX_TIME_WITHOUT_PRUN = 1 * 60;
-double MAX_TIME_WITH_PRUN = 15 * 60;
+double MAX_TIME_WITH_PRUN = 12 * 60;
 
 /*
     bfs:
@@ -64,7 +64,7 @@ node* bfs(node *root) {
         pointer to the goal state or null if the goal wasnt reached
 
     breadth first search implementation with pruning, limit time
-    of 15 minutes
+    of 12 minutes
 */
 node* bfs_with_pruning(node *root) {
     NODES_PER_HEIGHT.clear();
@@ -189,8 +189,10 @@ state_set ida_visited;
 pair<bool, int> ida_star_expansion(int bound, int g, int (*h)(node*), node *u) {
     int hval = h(u);
     int f = g + hval;
-    if (f > bound || ida_visited.find(u))
+    if (f > bound)
         return {false, f};
+    if (ida_visited.find(u))
+        return {false, SEARCH_ALG_INF};
 
     if (ida_path.size() >= NODES_PER_HEIGHT.size())
         NODES_PER_HEIGHT.push_back(1);
@@ -203,7 +205,6 @@ pair<bool, int> ida_star_expansion(int bound, int g, int (*h)(node*), node *u) {
     node *v = new node;
     copy_state(v->state, u->state);
     ida_visited.insert(v);
-
 
     int t = SEARCH_ALG_INF;
     ruleid_iterator_t my_it;
@@ -273,6 +274,7 @@ pair<node*, vector<int>> ida_star(node *root, int (*h)(node*)) {
     prints the nodes for each height of the last runned algorithm
 */
 void print_nodes_per_height() {
+    printf("NODOS POR ALTURA:\n");
     for (int i = 0; i < NODES_PER_HEIGHT.size(); ++i)
         printf("%d : %d\n", i, NODES_PER_HEIGHT[i]);
 }
