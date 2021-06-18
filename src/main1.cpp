@@ -65,7 +65,7 @@ int main() {
         printf("GOAL : %s\n\n", OUTPUT);
     }
     print_nodes_per_height();
-
+    print_time();
 
 
     return 0;

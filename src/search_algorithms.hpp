@@ -22,3 +22,5 @@ node* a_star(node *root, int (*h)(node*));
 pair<node*, vector<int>> ida_star(node *root, int (*h)(node*));
 
 void print_nodes_per_height();
+
+void print_time();

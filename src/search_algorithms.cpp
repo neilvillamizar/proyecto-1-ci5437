@@ -34,8 +34,10 @@ node* bfs(node *root) {
         else
             ++NODES_PER_HEIGHT[curr->h];
 
-        if (is_goal(curr->state))
+        if (is_goal(curr->state)) {
+            END = clock();
             return curr;
+        }
 
         ruleid_iterator_t my_it;
         init_fwd_iter(&my_it, curr->state);
@@ -82,8 +84,10 @@ node* bfs_with_pruning(node *root) {
         else
             ++NODES_PER_HEIGHT[curr->h];
 
-        if (is_goal(curr->state))
+        if (is_goal(curr->state)) {
+            END = clock();
             return curr;
+        }
 
         ruleid_iterator_t my_it;
         init_fwd_iter(&my_it, curr->state);
@@ -140,8 +144,10 @@ node* a_star(node *root, int (*h)(node*)) {
             else
                 ++NODES_PER_HEIGHT[u->h];
 
-            if (is_goal(u->state))
+            if (is_goal(u->state)) {
+                END = clock();
                 return u;
+            }
 
             ruleid_iterator_t my_it;
             init_fwd_iter(&my_it, u->state);
@@ -194,7 +200,10 @@ pair<bool, int> ida_star_expansion(int bound, int g, int (*h)(node*), node *u) {
     if (hval == 0)
         return {true, g};
 
-    ida_visited.insert(u);
+    node *v = new node;
+    copy_state(v->state, u->state);
+    ida_visited.insert(v);
+
 
     int t = SEARCH_ALG_INF;
     ruleid_iterator_t my_it;
@@ -207,17 +216,22 @@ pair<bool, int> ida_star_expansion(int bound, int g, int (*h)(node*), node *u) {
         if (h(u) < SEARCH_ALG_INF) {
             ida_path.push_back(rule_id);
             auto p = ida_star_expansion(bound, cost, h, u);
+
             if (p.first) {
-                ida_visited.erase(u);
+                ida_visited.erase(v);
+                delete v;
                 return p;
             }
+
             t = min(t, p.second);
             ida_path.pop_back();
         }
 
         u->apply_bwd(rule_id);
     }
-    ida_visited.erase(u);
+
+    ida_visited.erase(v);
+    delete v;
     return {false, t};
 }
 
@@ -261,4 +275,14 @@ pair<node*, vector<int>> ida_star(node *root, int (*h)(node*)) {
 void print_nodes_per_height() {
     for (int i = 0; i < NODES_PER_HEIGHT.size(); ++i)
         printf("%d : %d\n", i, NODES_PER_HEIGHT[i]);
+}
+
+/*
+    print_time:
+
+    prints the time taken by the last runned algorithm
+*/
+void print_time() {
+    double current_time = (double)(END - START) / CLOCKS_PER_SEC;
+    printf("TIEPO TOMADO : %.4lF seg\n", current_time);
 }
