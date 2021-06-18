@@ -120,14 +120,14 @@ node* bfs_with_pruning(node *root) {
 
 
 */
-node* a_star(node *root, int (*h)(state_t*)) {
+node* a_star(node *root, int (*h)(node*)) {
     NODES_PER_HEIGHT.clear();
     START = clock();
 
     state_map min_cost;
     priority_queue<pair<int, node*>> pq;
 
-    pq.push({ -h(root->state), root});
+    pq.push({ -h(root), root});
 
     while (!pq.empty()) {
         node *u = pq.top().second; pq.pop();
@@ -149,8 +149,8 @@ node* a_star(node *root, int (*h)(state_t*)) {
             while ((rule_id = next_ruleid(&my_it)) >= 0) {
                 node *succ = u->create_succ(rule_id);
 
-                if (h(succ->state) < SEARCH_ALG_INF)
-                    pq.push({ -(succ->g + h(succ->state)), succ});
+                if (h(succ) < SEARCH_ALG_INF)
+                    pq.push({ -(succ->g + h(succ)), succ});
             }
         }
     }
@@ -159,97 +159,6 @@ node* a_star(node *root, int (*h)(state_t*)) {
     return nullptr;
 }
 
-
-// global variables needed for efficient ida_star
-state_t *state, *state_cpy;
-vector<int> rules;
-
-
-char PRINT[256];
-/*
-    ida_star_expansion:
-
-    param:
-        bound : maximun value to reach in expansion
-        g : cost of the current state
-        h : heuristic to use
-
-    return:
-        bool representing if a goal was found and an int representing
-        the bound of the next iteration
-
-    here we use the efficient implementation of ida_star, using only
-    one state and a vector of actions
-*/
-pair<bool, int> ida_star_expansion(int bound, int g, int (*h)(state_t*)) {
-    int hval = h(state);
-    int f = g + hval;
-    if (f > bound)
-        return {false, f};
-    if (hval == 0)
-        return {true, g};
-
-    if (rules.size() >= NODES_PER_HEIGHT.size())
-        NODES_PER_HEIGHT.push_back(1);
-    else
-        ++NODES_PER_HEIGHT[rules.size()];
-
-    int t = SEARCH_ALG_INF;
-    ruleid_iterator_t my_it;
-    init_fwd_iter(&my_it, state);
-    int rule_id;
-    while ((rule_id = next_ruleid(&my_it)) >= 0) {
-        copy_state(state_cpy, state);
-
-        int cost = g + get_fwd_rule_cost(rule_id);
-        apply_fwd_rule(rule_id, state_cpy, state);
-
-        if (h(state) < SEARCH_ALG_INF) {
-            rules.push_back(rule_id);
-            auto p = ida_star_expansion(bound, cost, h);
-            if (p.first)
-                return p;
-
-            t = min(t, p.second);
-            rules.pop_back();
-        }
-
-        // devolver el cambio hecho por la regla, hay que copiar el estado
-        // porque si aplicas una regla a un mismo estado
-        copy_state(state_cpy, state);
-        apply_bwd_rule(rule_id, state_cpy, state);
-    }
-    return {false, t};
-}
-
-/*
-    ida_star:
-
-    param:
-        root : pointer to a node
-        h : heuristic to use
-
-    return:
-        pointer to the goal found and vector of actions taken
-*/
-pair<state_t*, vector<int>> ida_star(state_t *root, int (*h)(state_t*)) {
-    NODES_PER_HEIGHT.clear();
-
-    state_cpy = new state_t;
-    state = new state_t;
-
-    int bound = h(state);
-    while (bound < SEARCH_ALG_INF) {
-        copy_state(state, root);
-
-        auto p = ida_star_expansion(bound, 0, h);
-        if (p.first)
-            return {state, rules};
-        bound = p.second;
-        cout << bound << endl;
-    }
-    return {nullptr, rules};
-}
 
 /*
     print_nodes_per_height:

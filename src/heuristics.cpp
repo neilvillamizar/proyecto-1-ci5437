@@ -5,7 +5,7 @@ using namespace std;
 const int MX_STR_SZ = 256;
 char S[MX_STR_SZ];
 
-int manhattan_puzzle15(state_t *u) {
+int manhattan_puzzle15(node *u) {
     int dst = 0;
     auto toks = split_state_str(u);
 
@@ -18,7 +18,7 @@ int manhattan_puzzle15(state_t *u) {
     return dst;
 }
 
-int manhattan_puzzle24(state_t *u) {
+int manhattan_puzzle24(node *u) {
     int dst = 0;
     auto toks = split_state_str(u);
 
@@ -31,10 +31,10 @@ int manhattan_puzzle24(state_t *u) {
     return dst;
 }
 
-vector<string> split_state_str(state_t *u) {
+vector<string> split_state_str(node *u) {
     vector<string> ret;
 
-    int sz = sprint_state(S, MX_STR_SZ, u);
+    int sz = sprint_state(S, MX_STR_SZ, u->state);
     string aux;
     for (int i = 0; i < sz; ++i) {
         if (S[i] == ' ') {
