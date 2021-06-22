@@ -1,8 +1,8 @@
 #include "state_map.hpp"
+#include "utils.hpp"
 
 using namespace std;
 
-const int STATE_MAP_INF = 1e9;
 
 /*
     insert:
@@ -72,5 +72,5 @@ int state_map::get_cost(node *u) {
     for (auto it = table[hash].begin(); it != table[hash].end(); it++)
         if (compare_states(u->state, it->first->state) == 0)
             return it->second;
-    return STATE_MAP_INF;
+    return INF();
 }

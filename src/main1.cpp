@@ -30,6 +30,9 @@ int main() {
     printf("2) Bfs con eliminacion parcial de duplicados\n");
     printf("3) A* con distancia manhattan\n");
     printf("4) IDA* con distancia manhattan y uso eficiente de memoria\n");
+    printf("5) A* con PDBs aditivas\n");
+    printf("5) IDA* con PDBs aditivas\n");
+
 
     int aux;
     if (scanf("%d", &aux) <= 0) {
@@ -46,6 +49,9 @@ int main() {
         goal = a_star(root, manhattan_puzzle15);
     else if (aux == 4)
         goal = ida_star(root, manhattan_puzzle15).first;
+    else if (aux == 5) {
+        load_heuristics();
+    }
 
     if (goal == nullptr)
         printf("No se logro llegar a un estado objetivo\n");
