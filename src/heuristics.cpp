@@ -107,6 +107,20 @@ void load_heuristics() {
         if (strcmp(S, "0") == 0)
             break;
 
+        abstractions.push_back(read_abstraction_from_file(S));
 
+        printf("De el path del archivo pdb\n");
+        scanf("%s", S);
+
+        FILE *fp = fopen(S, "r");
+
+        state_maps.push_back(read_state_map(fp));
+        fclose(fp);
+
+        if (abstractions.back() == nullptr || state_maps.back() == nullptr) {
+            printf("Error en alguno de los 2 paths dados\n");
+            abstractions.pop_back();
+            state_maps.pop_back();
+        }
     }
 }
