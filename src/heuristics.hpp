@@ -4,6 +4,7 @@ using namespace std;
 
 #include <vector>
 #include <string>
+#include <stdio.h>
 #include "node.hpp"
 
 int manhattan_puzzle15(node *u);
