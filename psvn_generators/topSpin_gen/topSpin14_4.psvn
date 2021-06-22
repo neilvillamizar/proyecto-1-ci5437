@@ -1,0 +1,25 @@
+# This file was created by genTopSpin.cpp with the following command line parameters:
+#  14  4
+
+# number of state variables = the number of tokens
+13
+
+# All state variables have 13 possible values.
+ 13 13 13 13 13 13 13 13 13 13 13 13 13 13
+
+X1 X2 X3 X4 -  -  -  -  -  -  -  -  -  => X4 X3 X2 X1 -  -  -  -  -  -  -  -  -  LABEL RevAt0
+-  X1 X2 X3 X4 -  -  -  -  -  -  -  -  => -  X4 X3 X2 X1 -  -  -  -  -  -  -  -  LABEL RevAt1
+-  -  X1 X2 X3 X4 -  -  -  -  -  -  -  => -  -  X4 X3 X2 X1 -  -  -  -  -  -  -  LABEL RevAt2
+-  -  -  X1 X2 X3 X4 -  -  -  -  -  -  => -  -  -  X4 X3 X2 X1 -  -  -  -  -  -  LABEL RevAt3
+-  -  -  -  X1 X2 X3 X4 -  -  -  -  -  => -  -  -  -  X4 X3 X2 X1 -  -  -  -  -  LABEL RevAt4
+-  -  -  -  -  X1 X2 X3 X4 -  -  -  -  => -  -  -  -  -  X4 X3 X2 X1 -  -  -  -  LABEL RevAt5
+-  -  -  -  -  -  X1 X2 X3 X4 -  -  -  => -  -  -  -  -  -  X4 X3 X2 X1 -  -  -  LABEL RevAt6
+-  -  -  -  -  -  -  X1 X2 X3 X4 -  -  => -  -  -  -  -  -  -  X4 X3 X2 X1 -  -  LABEL RevAt7
+-  -  -  -  -  -  -  -  X1 X2 X3 X4 -  => -  -  -  -  -  -  -  -  X4 X3 X2 X1 -  LABEL RevAt8
+-  -  -  -  -  -  -  -  -  X1 X2 X3 X4 => -  -  -  -  -  -  -  -  -  X4 X3 X2 X1 LABEL RevAt9
+T1 T2 T3 T4 T5 T6 T7 T8 T9 T10 X1 X2 X3 => X3 X2 X1 T1 T2 T3 T4 T5 T6 T7 T8 T9 T10 LABEL RevAt10
+X4 T1 T2 T3 T4 T5 T6 T7 T8 T9 T10 X1 X2 => X2 X1 T1 T2 T3 T4 T5 T6 T7 T8 T9 T10 X4 LABEL RevAt11
+X3 X4 T1 T2 T3 T4 T5 T6 T7 T8 T9 T10 X1 => X1 T1 T2 T3 T4 T5 T6 T7 T8 T9 T10 X4 X3 LABEL RevAt12
+X2 X3 X4 T1 T2 T3 T4 T5 T6 T7 T8 T9 T10 => T1 T2 T3 T4 T5 T6 T7 T8 T9 T10 X4 X3 X2 LABEL RevAt13
+
+GOAL 0 1 2 3 4 5 6 7 8 9 10 11 12 
