@@ -178,7 +178,7 @@ int main(int argc, char *argv[])
     cout << Nstring << endl;
 
     cout << "\n# All state variables have "  << Nstring << " possible values."<< endl;
-    for (int i=0;i<N;i++)  { cout << " " << Nstring; }
+    for (int i=0;i<N-1;i++)  { cout << " " << Nstring; }
 
     cout << "\n\n";
 

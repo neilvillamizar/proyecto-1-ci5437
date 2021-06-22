@@ -5,7 +5,7 @@
 13
 
 # All state variables have 13 possible values.
- 13 13 13 13 13 13 13 13 13 13 13 13 13 13
+ 13 13 13 13 13 13 13 13 13 13 13 13 13
 
 X1 X2 X3 X4 -  -  -  -  -  -  -  -  -  => X4 X3 X2 X1 -  -  -  -  -  -  -  -  -  LABEL RevAt0
 -  X1 X2 X3 X4 -  -  -  -  -  -  -  -  => -  X4 X3 X2 X1 -  -  -  -  -  -  -  -  LABEL RevAt1
