@@ -1,8 +1,8 @@
 #include "search_algorithms.hpp"
+#include "utils.hpp"
 
 vector<int> NODES_PER_HEIGHT;
 
-const int SEARCH_ALG_INF = 1e9;
 clock_t START, END;
 double MAX_TIME_WITHOUT_PRUN = 1 * 60;
 double MAX_TIME_WITH_PRUN = 12 * 60;
@@ -155,7 +155,7 @@ node* a_star(node *root, int (*h)(node*)) {
             while ((rule_id = next_ruleid(&my_it)) >= 0) {
                 node *succ = u->create_succ(rule_id);
 
-                if (h(succ) < SEARCH_ALG_INF)
+                if (h(succ) < INF())
                     pq.push({ -(succ->g + h(succ)), succ});
             }
         }
@@ -192,7 +192,7 @@ pair<bool, int> ida_star_expansion(int bound, int g, int (*h)(node*), node *u) {
     if (f > bound)
         return {false, f};
     if (ida_visited.find(u))
-        return {false, SEARCH_ALG_INF};
+        return {false, INF()};
 
     if (ida_path.size() >= NODES_PER_HEIGHT.size())
         NODES_PER_HEIGHT.push_back(1);
@@ -206,7 +206,7 @@ pair<bool, int> ida_star_expansion(int bound, int g, int (*h)(node*), node *u) {
     copy_state(v->state, u->state);
     ida_visited.insert(v);
 
-    int t = SEARCH_ALG_INF;
+    int t = INF();
     ruleid_iterator_t my_it;
     init_fwd_iter(&my_it, u->state);
     int rule_id;
@@ -214,7 +214,7 @@ pair<bool, int> ida_star_expansion(int bound, int g, int (*h)(node*), node *u) {
         int cost = g + get_fwd_rule_cost(rule_id);
         u->apply_fwd(rule_id);
 
-        if (h(u) < SEARCH_ALG_INF) {
+        if (h(u) < INF()) {
             ida_path.push_back(rule_id);
             auto p = ida_star_expansion(bound, cost, h, u);
 
@@ -251,7 +251,7 @@ pair<node*, vector<int>> ida_star(node *root, int (*h)(node*)) {
     START = clock();
     node *u = new node;
     int bound = h(root);
-    while (bound < SEARCH_ALG_INF) {
+    while (bound < INF()) {
         copy_state(u->state, root->state);
         auto p = ida_star_expansion(bound, 0, h, u);
         if (p.first) {

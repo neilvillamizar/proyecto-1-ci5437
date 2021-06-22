@@ -1,4 +1,5 @@
 #include "heuristics.hpp"
+#include "utils.hpp"
 
 using namespace std;
 
@@ -47,4 +48,65 @@ vector<string> split_state_str(node *u) {
             aux += S[i];
     }
     return ret;
+}
+
+
+vector<abstraction_t*> abstractions;
+vector<state_map_t*> state_maps;
+
+void add_abs(abstraction_t *a) {
+    abstractions.push_back(a);
+}
+
+void clear_abs() {
+    abstractions.clear();
+}
+
+void add_state_maps(state_map_t *st_mp) {
+    state_maps.push_back(st_mp);
+}
+
+void clear_state_maps() {
+    state_maps.clear();
+}
+
+int max_heuristic(node *u) {
+    int n = abstractions.size();
+    state_t *aux = new state_t;
+    int mx = 0;
+    for (int i = 0; i < n; ++i) {
+        abstract_state(abstractions[i], u->state, aux);
+        int *val = state_map_get(state_maps[i], aux);
+        if (val == nullptr)
+            return INF();
+        mx = max(mx, *val);
+    }
+    return mx;
+}
+
+int additive_heuristic(node *u) {
+    int n = abstractions.size();
+    state_t *aux = new state_t;
+    int sm = 0;
+    for (int i = 0; i < n; ++i) {
+        abstract_state(abstractions[i], u->state, aux);
+        int *val = state_map_get(state_maps[i], aux);
+        if (val == nullptr)
+            return INF();
+        sm += *val;
+    }
+    return sm;
+}
+
+void load_heuristics() {
+    string inp;
+    char *inp_arr;
+    while (true) {
+        printf("De el path del archivo con la abstraccion o 0 para no cargar mas\n");
+        scanf("%s", S);
+        if (strcmp(S, "0") == 0)
+            break;
+
+
+    }
 }
