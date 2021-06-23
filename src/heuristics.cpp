@@ -80,8 +80,8 @@ int max_heuristic(node *u) {
         if (val == nullptr)
             return INF();
         mx = max(mx, *val);
-        delete val;
     }
+    delete aux;
     return mx;
 }
 
@@ -95,8 +95,8 @@ int additive_heuristic(node *u) {
         if (val == nullptr)
             return INF();
         sm += *val;
-        delete val;
     }
+    delete aux;
     return sm;
 }
 
