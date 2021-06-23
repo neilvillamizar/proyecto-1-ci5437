@@ -18,6 +18,7 @@ int main() {
         return -1;
     }
 
+    printf("estado que meti xd xd: \n%s\n", INPUT);
 
     int sz = read_state(INPUT, root->state);
     if (sz < 0) {
@@ -32,7 +33,8 @@ int main() {
     printf("4) IDA* con distancia manhattan y uso eficiente de memoria\n");
     printf("5) A* con PDBs aditivas\n");
     printf("6) IDA* con PDBs aditivas\n");
-
+    printf("7) A* con maximo de PDBs\n");
+    printf("8) IDA* con maximo de PDBs\n");
 
     int aux;
     if (scanf("%d", &aux) <= 0) {
@@ -57,10 +59,18 @@ int main() {
         load_heuristics();
         goal = ida_star(root, additive_heuristic).first;
     }
+    else if (aux == 7) {
+        load_heuristics();
+        goal = a_star(root, max_heuristic);
+    }
+    else if (aux == 8) {
+        load_heuristics();
+        goal = ida_star(root, max_heuristic).first;
+    }
 
     if (goal == nullptr)
         printf("No se logro llegar a un estado objetivo\n");
-    else if (aux != 4 && aux != 6) {
+    else if (aux != 4 && aux != 6 && aux != 8) {
         sprint_state(OUTPUT, 256, goal->state);
         printf("GOAL : %s\n\n", OUTPUT);
         printf("PATH : \n");
@@ -71,7 +81,7 @@ int main() {
         }
         printf("\n");
     }
-    else if (aux == 4 || aux == 6) {
+    else if (aux == 4 || aux == 6 || aux == 8) {
         sprint_state(OUTPUT, 256, goal->state);
         printf("GOAL : %s\n\n", OUTPUT);
     }
