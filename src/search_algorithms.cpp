@@ -105,7 +105,7 @@ node* bfs_with_pruning(node *root) {
 
         END = clock();
         double current_time = (double)(END - START) / CLOCKS_PER_SEC;
-        if (current_time >= MAX_TIME_WITH_PRUN)
+        if (current_time >= 30 * 60)
             break;
     }
     END = clock();
@@ -159,6 +159,11 @@ node* a_star(node *root, int (*h)(node*)) {
                     pq.push({ -(succ->g + h(succ)), succ});
             }
         }
+
+        END = clock();
+        double current_time = (double)(END - START) / CLOCKS_PER_SEC;
+        if (current_time >= 30 * 60)
+            break;
     }
 
     END = clock();
@@ -201,6 +206,11 @@ pair<bool, int> ida_star_expansion(int bound, int g, int (*h)(node*), node *u) {
 
     if (hval == 0)
         return {true, g};
+
+    END = clock();
+    double current_time = (double)(END - START) / CLOCKS_PER_SEC;
+    if (current_time >= 180 * 60)
+        return {false, INF()};
 
     node *v = new node;
     copy_state(v->state, u->state);
