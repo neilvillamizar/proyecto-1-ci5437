@@ -31,7 +31,7 @@ int main() {
     printf("3) A* con distancia manhattan\n");
     printf("4) IDA* con distancia manhattan y uso eficiente de memoria\n");
     printf("5) A* con PDBs aditivas\n");
-    printf("5) IDA* con PDBs aditivas\n");
+    printf("6) IDA* con PDBs aditivas\n");
 
 
     int aux;
@@ -51,11 +51,16 @@ int main() {
         goal = ida_star(root, manhattan_puzzle15).first;
     else if (aux == 5) {
         load_heuristics();
+        goal = a_star(root, additive_heuristic);
+    }
+    else if (aux == 6) {
+        load_heuristics();
+        goal = ida_star(root, additive_heuristic).first;
     }
 
     if (goal == nullptr)
         printf("No se logro llegar a un estado objetivo\n");
-    else if (aux <= 3) {
+    else if (aux != 4 && aux != 6) {
         sprint_state(OUTPUT, 256, goal->state);
         printf("GOAL : %s\n\n", OUTPUT);
         printf("PATH : \n");
@@ -66,7 +71,7 @@ int main() {
         }
         printf("\n");
     }
-    else if (aux == 4) {
+    else if (aux == 4 || aux == 6) {
         sprint_state(OUTPUT, 256, goal->state);
         printf("GOAL : %s\n\n", OUTPUT);
     }
