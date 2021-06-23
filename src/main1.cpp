@@ -7,7 +7,7 @@
 
 using namespace std;
 
-const int MX_INP_SZ = 256;
+const int MX_INP_SZ = 512;
 char INPUT[MX_INP_SZ], OUTPUT[MX_INP_SZ];
 
 int main() {
@@ -17,8 +17,6 @@ int main() {
         printf("Error en el estado dado\n");
         return -1;
     }
-
-    printf("estado que meti xd xd: \n%s\n", INPUT);
 
     int sz = read_state(INPUT, root->state);
     if (sz < 0) {
