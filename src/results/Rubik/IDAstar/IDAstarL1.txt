@@ -1,0 +1,67 @@
+De el estado inicial
+Que desea hacer?
+1) Bfs sin eliminacion de duplicados
+2) Bfs con eliminacion parcial de duplicados
+3) A* con distancia manhattan
+4) IDA* con distancia manhattan y uso eficiente de memoria
+5) A* con PDBs aditivas
+6) IDA* con PDBs aditivas
+7) A* con maximo de PDBs
+8) IDA* con maximo de PDBs
+De el path del archivo con la abstraccion o 0 para no cargar mas
+De el path del archivo pdb
+De el path del archivo con la abstraccion o 0 para no cargar mas
+De el path del archivo pdb
+De el path del archivo con la abstraccion o 0 para no cargar mas
+De el path del archivo pdb
+De el path del archivo con la abstraccion o 0 para no cargar mas
+De el path del archivo pdb
+De el path del archivo con la abstraccion o 0 para no cargar mas
+De el path del archivo pdb
+De el path del archivo con la abstraccion o 0 para no cargar mas
+De el path del archivo pdb
+De el path del archivo con la abstraccion o 0 para no cargar mas
+De el path del archivo pdb
+De el path del archivo con la abstraccion o 0 para no cargar mas
+De el path del archivo pdb
+De el path del archivo con la abstraccion o 0 para no cargar mas
+GOAL : RED RED RED RED RED RED RED RED GREEN GREEN GREEN GREEN GREEN GREEN GREEN GREEN BLUE BLUE BLUE BLUE BLUE BLUE BLUE BLUE YELLOW YELLOW YELLOW YELLOW YELLOW YELLOW YELLOW YELLOW ORANGE ORANGE ORANGE ORANGE ORANGE ORANGE ORANGE ORANGE WHITE WHITE WHITE WHITE
+
+NODOS POR ALTURA:
+0 : 5
+1 : 66
+2 : 848
+3 : 9382
+4 : 74023
+5 : 315434
+6 : 369135
+7 : 136358
+8 : 26926
+9 : 3193
+10 : 498
+11 : 45
+12 : 1
+TIEPO TOMADO : 28.8889 seg
+	Command being timed: "./rubik"
+	User time (seconds): 28.24
+	System time (seconds): 3.14
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:31.42
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 10658032
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2663725
+	Voluntary context switches: 1
+	Involuntary context switches: 259
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

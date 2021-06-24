@@ -217,5 +217,22 @@ TIEPO TOMADO : 516.4651 seg
 Maximum resident set size (kbytes): 9610156
 
 alg: IDA* (max pdb)
-goal: true
-
+goal: false
+NODOS POR ALTURA:
+0 : 14
+1 : 70
+2 : 308
+3 : 1340
+4 : 5749
+5 : 24062
+6 : 98042
+7 : 389316
+8 : 1497315
+9 : 5514648
+10 : 19014363
+11 : 58318663
+12 : 140692370
+13 : 191183469
+14 : 13
+TIEPO TOMADO : 1800.0000 seg (TLE)
+Maximum resident set size (kbytes): 8860
