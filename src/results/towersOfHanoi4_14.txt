@@ -168,29 +168,32 @@ estado:
 0 0 0 1 0 0 0 1 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 1
 
 alg: A* (max pdb)
-goal: true
-
-
-alg: IDA* (max pdb)
-goal: true
-
-estado:
-0 0 0 1 0 0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0
-
-alg: A* (max pdb)
-goal: true
-
+goal: false
+Command terminated by signal 9
+User time (seconds): 476.09
+System time (seconds): 45.32
+Elapsed (wall clock) time (h:mm:ss or m:ss): 8:42.14
+Maximum resident set size (kbytes): 12217820
+(se gasto las 12 GB de ram)
 
 alg: IDA* (max pdb)
-goal: true
-
-estado:
-0 1 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 1 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 1 0 0 0 1 0 0 1 0 0 0
-
-alg: A* (max pdb)
-goal: true
-
-
-alg: IDA* (max pdb)
-goal: true
-
+goal: false
+NODOS POR ALTURA:
+0 : 14
+1 : 72
+2 : 332
+3 : 1444
+4 : 6159
+5 : 25585
+6 : 103372
+7 : 406789
+8 : 1546936
+9 : 5615341
+10 : 19000404
+11 : 56590576
+12 : 127703709
+13 : 154256167
+14 : 14479645
+15 : 852
+TIEPO TOMADO : 1800.0000 seg
+Maximum resident set size (kbytes): 17260
