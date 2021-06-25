@@ -148,14 +148,35 @@
         resultados 24 puzzle & dificultad& tiempo& memoria& goal& nodos generados&
         \hline
         \multirow{}{}{A* con pdb's aditivas } 
-            &facil & seg & kb &si & \\
-            &media & seg & kb &si & \\
-            &dificil & seg & kb &si & \\
+            &facil &4.0325 seg &329860 kb &si &683153 \\
+            &media &64.1361 seg &2905656 kb &si &8528812 \\
+            &dificil &300.0000 seg &10842984 kb &no &33050877 \\
         \hline
         \multirow{}{}{IDA* con pdb's aditivas } 
-        	&facil & seg & kb &si & \\
-            &media & seg & kb &si & \\
-            &dificil & seg & kb &si & \\
+        	&facil &6.8692 seg &143956 kb &si &1466120 \\
+            &media &281.8952 seg &836476 kb &si &46801616 \\
+            &dificil &3600.000 seg &6438336 kb &no &485166599 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+
+\begin{center}
+    \begin{tabular}{|c|c c c c c|}
+        \hline
+        resultados Rubik & dificultad& tiempo& memoria& goal& nodos generados&
+        \hline
+        \multirow{}{}{A* con maximo de pdb's } 
+            &facil &0.0001 seg &8523560 kb &si &4 \\
+            &media &0.0026 seg &8523690 kb &si &77.5 \\
+            &dificil &16.4536 seg &10577806.6 kb &si &442976\\
+            &dificil (extra) &139.43 seg &26955992 kb (MLE) &no &NA\\
+        \hline
+        \multirow{}{}{IDA* con maximo de pdb's } 
+        	&facil &0.0001 seg &8523444 kb &si &4 \\
+            &media &0.005 seg &8523854 kb &si &165.5 \\
+            &dificil &19.8377 seg &10061273 kb &si &675017.33 \\
+            &dificil (extra) &76.7465 seg &14680924 kb &si &2711447 \\
         \hline
     \end{tabular}
 \end{center}

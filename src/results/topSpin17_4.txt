@@ -1,4 +1,4 @@
-Resultados de top spin 14 - 4:
+Resultados de top spin 17 - 4:
 
 Algoritmo:
 A* con maximo de PDBs
