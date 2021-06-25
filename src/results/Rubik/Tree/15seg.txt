@@ -12,27 +12,27 @@ No se logro llegar a un estado objetivo
 NODOS POR ALTURA:
 0 : 1
 1 : 18
-2 : 243
-3 : 3240
-4 : 43239
-5 : 574908
-6 : 63790
+2 : 324
+3 : 5832
+4 : 104976
+5 : 1889568
+6 : 3702014
 TIEPO TOMADO : 15.0000 seg
 	Command being timed: "./rubik"
-	User time (seconds): 15.64
-	System time (seconds): 0.66
+	User time (seconds): 12.26
+	System time (seconds): 3.23
 	Percent of CPU this job got: 99%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:16.33
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.50
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 2059444
+	Maximum resident set size (kbytes): 12024032
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 514603
+	Minor (reclaiming a frame) page faults: 3008636
 	Voluntary context switches: 1
-	Involuntary context switches: 1271
+	Involuntary context switches: 110
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 8
