@@ -37,7 +37,7 @@ Creamos 6 abstracciones, mapeando estados a blanks, en las que dividimos los est
 4. 11, 12, 13, 14
 5. 16, 17, 18, 19
 6. 21, 22, 23, 24
-7. 
+
 Usamos 6 para que el tamano de las pdbs generadas no fuera tan grande.
 
 #### Rubik
