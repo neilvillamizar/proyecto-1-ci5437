@@ -1,0 +1,66 @@
+De el estado inicial
+Que desea hacer?
+1) Bfs sin eliminacion de duplicados
+2) Bfs con eliminacion parcial de duplicados
+3) A* con distancia manhattan
+4) IDA* con distancia manhattan y uso eficiente de memoria
+5) A* con PDBs aditivas
+6) IDA* con PDBs aditivas
+7) A* con maximo de PDBs
+8) IDA* con maximo de PDBs
+De el path del archivo con la abstraccion o 0 para no cargar mas
+De el path del archivo pdb
+De el path del archivo con la abstraccion o 0 para no cargar mas
+De el path del archivo pdb
+De el path del archivo con la abstraccion o 0 para no cargar mas
+De el path del archivo pdb
+De el path del archivo con la abstraccion o 0 para no cargar mas
+De el path del archivo pdb
+De el path del archivo con la abstraccion o 0 para no cargar mas
+De el path del archivo pdb
+De el path del archivo con la abstraccion o 0 para no cargar mas
+De el path del archivo pdb
+De el path del archivo con la abstraccion o 0 para no cargar mas
+De el path del archivo pdb
+De el path del archivo con la abstraccion o 0 para no cargar mas
+De el path del archivo pdb
+De el path del archivo con la abstraccion o 0 para no cargar mas
+GOAL : RED RED RED RED RED RED RED RED GREEN GREEN GREEN GREEN GREEN GREEN GREEN GREEN BLUE BLUE BLUE BLUE BLUE BLUE BLUE BLUE YELLOW YELLOW YELLOW YELLOW YELLOW YELLOW YELLOW YELLOW ORANGE ORANGE ORANGE ORANGE ORANGE ORANGE ORANGE ORANGE WHITE WHITE WHITE WHITE
+
+PATH : 
+	RED RED RED GREEN GREEN WHITE WHITE YELLOW BLUE BLUE GREEN BLUE BLUE ORANGE WHITE ORANGE YELLOW YELLOW BLUE YELLOW YELLOW RED ORANGE RED ORANGE BLUE YELLOW BLUE ORANGE ORANGE RED ORANGE GREEN GREEN BLUE GREEN GREEN WHITE ORANGE WHITE YELLOW YELLOW WHITE W
+	RED RED RED GREEN GREEN WHITE WHITE YELLOW BLUE BLUE GREEN GREEN GREEN WHITE WHITE ORANGE YELLOW YELLOW BLUE BLUE BLUE ORANGE ORANGE RED ORANGE BLUE YELLOW YELLOW YELLOW RED RED ORANGE GREEN GREEN BLUE BLUE ORANGE ORANGE ORANGE WHITE RED RED YELLOW YELLOW
+	RED GREEN GREEN WHITE WHITE YELLOW RED RED GREEN GREEN GREEN GREEN GREEN WHITE WHITE WHITE BLUE BLUE BLUE BLUE BLUE ORANGE ORANGE ORANGE YELLOW YELLOW YELLOW YELLOW YELLOW RED RED RED ORANGE BLUE BLUE BLUE ORANGE ORANGE ORANGE ORANGE RED RED YELLOW YELLOW
+	RED GREEN GREEN GREEN RED RED RED RED GREEN WHITE WHITE WHITE GREEN GREEN GREEN GREEN BLUE BLUE BLUE BLUE BLUE BLUE BLUE BLUE YELLOW YELLOW YELLOW YELLOW YELLOW RED RED RED ORANGE ORANGE ORANGE ORANGE ORANGE ORANGE ORANGE ORANGE WHITE YELLOW YELLOW YELLOW
+	RED RED RED RED RED RED RED RED GREEN GREEN GREEN GREEN GREEN GREEN GREEN GREEN BLUE BLUE BLUE BLUE BLUE BLUE BLUE BLUE YELLOW YELLOW YELLOW YELLOW YELLOW YELLOW YELLOW YELLOW ORANGE ORANGE ORANGE ORANGE ORANGE ORANGE ORANGE ORANGE WHITE WHITE WHITE WHITE
+
+NODOS POR ALTURA:
+0 : 1
+1 : 1
+2 : 1
+3 : 1
+4 : 1
+TIEPO TOMADO : 0.0002 seg
+	Command being timed: "./rubik"
+	User time (seconds): 0.00
+	System time (seconds): 2.49
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.50
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8523352
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2130083
+	Voluntary context switches: 1
+	Involuntary context switches: 5
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
