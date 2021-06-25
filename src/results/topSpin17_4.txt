@@ -131,3 +131,49 @@ NODOS POR ALTURA:
 TIEPO TOMADO : 0.0620 seg
 Maximum resident set size (kbytes): 272868
 
+
+
+algo:
+bfs con duplicados
+Estado inicial:
+15 0 14 1 13 2 12 3 11 4 10 5 9 6 8 7
+goal: false.
+NODOS POR ALTURA:
+0 : 1
+1 : 17
+2 : 289
+3 : 4913
+4 : 83521
+5 : 1419857
+6 : 11556724
+TIEPO TOMADO : 22.0000 seg
+Maximum resident set size (kbytes): 12157096
+
+algo:
+bfs sin duplicados
+Estado inicial:
+15 0 14 1 13 2 12 3 11 4 10 5 9 6 8 7
+goal: false.
+NODOS POR ALTURA:
+0 : 1
+1 : 17
+2 : 187
+3 : 1734
+4 : 14841
+5 : 121261
+6 : 956828
+7 : 7323702
+8 : 970034
+TIEPO TOMADO : 540.0001 seg
+Maximum resident set size (kbytes): 10428080
+
+NODOS POR ALTURA:
+0 : 1
+1 : 17
+2 : 187
+3 : 1734
+4 : 14841
+5 : 121261
+6 : 543539
+TIEPO TOMADO : 22.0000 seg
+Maximum resident set size (kbytes): 798592
