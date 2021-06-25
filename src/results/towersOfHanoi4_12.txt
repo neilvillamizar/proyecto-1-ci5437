@@ -1,0 +1,238 @@
+Resultados para towers of hanoi 4 - 12:
+
+casos d=005
+
+estado:
+0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+
+alg: A* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 1
+1 : 2
+2 : 4
+3 : 1
+TIEPO TOMADO : 0.0001 seg
+Maximum resident set size (kbytes): 5820
+
+alg: IDA*
+goal: true
+NODOS POR ALTURA:
+0 : 2
+1 : 8
+2 : 10
+3 : 1
+TIEPO TOMADO : 0.0001 seg
+Maximum resident set size (kbytes): 5808
+
+estado:
+0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+
+alg: A* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 1
+1 : 1
+TIEPO TOMADO : 0.0000 seg
+Maximum resident set size (kbytes): 5832
+
+alg: IDA* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 1
+1 : 1
+TIEPO TOMADO : 0.0000 seg
+Maximum resident set size (kbytes): 5808
+
+estado:
+0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+
+alg: A* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 1
+1 : 2
+2 : 1
+TIEPO TOMADO : 0.0001 seg
+Maximum resident set size (kbytes): 5888
+
+alg: IDA* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 2
+1 : 2
+2 : 1
+TIEPO TOMADO : 0.0000 seg
+Maximum resident set size (kbytes): 5796
+
+casos d=015
+
+estado:
+0 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+
+alg: A* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 1
+1 : 4
+2 : 5
+3 : 1
+TIEPO TOMADO : 0.0002 seg
+Maximum resident set size (kbytes): 5828
+
+alg: IDA* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 3
+1 : 4
+2 : 4
+3 : 1
+TIEPO TOMADO : 0.0001 seg
+Maximum resident set size (kbytes): 5768
+
+estado:
+0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+
+alg: A* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 1
+1 : 6
+2 : 15
+3 : 13
+4 : 3
+5 : 1
+TIEPO TOMADO : 0.0006 seg
+Maximum resident set size (kbytes): 5812
+
+alg: IDA* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 3
+1 : 15
+2 : 45
+3 : 77
+4 : 54
+5 : 1
+TIEPO TOMADO : 0.0024 seg
+Maximum resident set size (kbytes): 5800
+
+
+estado:
+0 0 1 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+
+alg: A* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 1
+1 : 1
+2 : 1
+TIEPO TOMADO : 0.0005 seg
+Maximum resident set size (kbytes): 5832
+
+alg: IDA* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 1
+1 : 3
+2 : 1
+TIEPO TOMADO : 0.0000 seg
+Maximum resident set size (kbytes): 5796
+
+case d=2000000
+
+estado:
+0 0 0 1 0 1 0 0 0 0 0 1 0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0
+
+alg: A* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 1
+1 : 6
+2 : 19
+3 : 46
+4 : 99
+5 : 186
+6 : 324
+7 : 514
+8 : 858
+9 : 1148
+10 : 1721
+11 : 2712
+12 : 3317
+13 : 4350
+14 : 6762
+15 : 9587
+16 : 10944
+17 : 14211
+18 : 19637
+19 : 26867
+20 : 33734
+21 : 40819
+22 : 50203
+23 : 62828
+24 : 77680
+25 : 96266
+26 : 114622
+27 : 133498
+28 : 150095
+29 : 171540
+30 : 205841
+31 : 248953
+32 : 290878
+33 : 326419
+34 : 345682
+35 : 362398
+36 : 399608
+37 : 463218
+38 : 537732
+39 : 621282
+40 : 698849
+41 : 751298
+42 : 761450
+43 : 726091
+44 : 682315
+45 : 687434
+46 : 738334
+47 : 816269
+48 : 880497
+49 : 928009
+50 : 930252
+51 : 868495
+52 : 755714
+53 : 604720
+54 : 449479
+55 : 307332
+56 : 181885
+57 : 89367
+58 : 29822
+59 : 6890
+60 : 2106
+61 : 626
+62 : 117
+63 : 15
+64 : 2
+65 : 1
+TIEPO TOMADO : 516.4651 seg
+Maximum resident set size (kbytes): 9610156
+
+alg: IDA* (max pdb)
+goal: false
+NODOS POR ALTURA:
+0 : 14
+1 : 70
+2 : 308
+3 : 1340
+4 : 5749
+5 : 24062
+6 : 98042
+7 : 389316
+8 : 1497315
+9 : 5514648
+10 : 19014363
+11 : 58318663
+12 : 140692370
+13 : 191183469
+14 : 13
+TIEPO TOMADO : 1800.0000 seg (TLE)
+Maximum resident set size (kbytes): 8860

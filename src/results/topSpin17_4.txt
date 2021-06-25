@@ -1,0 +1,133 @@
+Resultados de top spin 14 - 4:
+
+Algoritmo:
+A* con maximo de PDBs
+
+1) Facil
+
+Estado inicial:
+7 5 2 9 4 8 0 10 6 1 3 11 12 13 14 15
+GOAL : 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
+NODOS POR ALTURA:
+0 : 1
+1 : 17
+2 : 174
+3 : 1101
+4 : 2654
+5 : 2029
+6 : 636
+7 : 163
+8 : 29
+9 : 6
+10 : 2
+11 : 1
+TIEPO TOMADO : 0.1214 seg
+Maximum resident set size (kbytes): 281208
+
+2) Medio
+
+Estado inicial:
+15 0 14 1 13 2 12 3 11 4 10 5 9 6 8 7
+GOAL : 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+NODOS POR ALTURA:
+0 : 1
+1 : 17
+2 : 187
+3 : 1734
+4 : 14841
+5 : 120291
+6 : 752735
+7 : 2226700
+8 : 2238490
+9 : 800995
+10 : 119017
+11 : 9357
+12 : 566
+13 : 41
+14 : 12
+15 : 2
+16 : 1
+TIEPO TOMADO : 126.7007 seg
+Maximum resident set size (kbytes): 7400988
+
+3) Dificil
+
+Estado inicial
+15 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+No se logro llegar a un estado objetivo.
+Ejecucion interrumpida por signal 9.
+El proceso uso toda la ram disponible (12 GB)
+User time (seconds): 211.25
+System time (seconds): 12.56
+Percent of CPU this job got: 97%
+Elapsed (wall clock) time (h:mm:ss or m:ss): 3:48.41
+
+Algoritmo:
+IDA* con maximo de PDBs
+
+1) Facil
+
+Estado inicial:
+7 5 2 9 4 8 0 10 6 1 3 11 12 13 14 15
+GOAL : 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
+NODOS POR ALTURA:
+0 : 3
+1 : 35
+2 : 356
+3 : 2279
+4 : 7445
+5 : 8932
+6 : 5284
+7 : 1899
+8 : 1011
+9 : 744
+10 : 2
+11 : 1
+TIEPO TOMADO : 0.3739 seg
+Maximum resident set size (kbytes): 270468
+
+2) Medio (Dificil para IDA*)
+
+Estado inicial:
+15 0 14 1 13 2 12 3 11 4 10 5 9 6 8 7
+No se logro llegar a un estado objetivo.
+NODOS POR ALTURA:
+0 : 8
+1 : 106
+2 : 1286
+3 : 16595
+4 : 203589
+5 : 2227129
+6 : 19198491
+7 : 97282512
+8 : 248710682
+9 : 248494812
+10 : 83004071
+11 : 12160985
+12 : 1361342
+13 : 194472
+14 : 37979
+15 : 4048
+TIEPO TOMADO : 10800.0003 seg
+Maximum resident set size (kbytes): 1138012
+
+
+3) Dificil (Medio para IDA*)
+
+Estado inicial
+15 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+GOAL : 0 1 8 3 4 5 6 7 2 9 10 11 12 13 14 15 
+NODOS POR ALTURA:
+0 : 6
+1 : 57
+2 : 480
+3 : 2338
+4 : 2204
+5 : 618
+6 : 135
+7 : 1
+8 : 1
+9 : 1
+TIEPO TOMADO : 0.0620 seg
+Maximum resident set size (kbytes): 272868
+

@@ -162,7 +162,7 @@ node* a_star(node *root, int (*h)(node*)) {
 
         END = clock();
         double current_time = (double)(END - START) / CLOCKS_PER_SEC;
-        if (current_time >= 30 * 60)
+        if (current_time >= 15 * 60)
             break;
     }
 
@@ -209,7 +209,7 @@ pair<bool, int> ida_star_expansion(int bound, int g, int (*h)(node*), node *u) {
 
     END = clock();
     double current_time = (double)(END - START) / CLOCKS_PER_SEC;
-    if (current_time >= 180 * 60)
+    if (current_time >= 30 * 60)
         return {false, INF()};
 
     node *v = new node;

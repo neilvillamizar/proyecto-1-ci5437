@@ -1,0 +1,121 @@
+Resultados topSpin 12 - 4:
+
+ALgoritmo:
+A* con maximo de PDBs
+
+1) Facil
+
+Estado inicial:
+7 6 9 8 0 2 10 1 5 4 3
+GOAL : 0 1 2 3 4 5 6 7 8 9 10
+NODOS POR ALTURA:
+0 : 1
+1 : 1
+2 : 1
+3 : 2
+4 : 1
+5 : 1
+TIEPO TOMADO : 0.0001 seg
+Maximum resident set size (kbytes): 13664
+
+2) Medio
+
+Estado inicial:
+10 0 1 9 2 8 3 7 6 5 4
+GOAL : 0 1 2 3 4 5 6 7 8 9 10 
+NODOS POR ALTURA:
+0 : 1
+1 : 12
+2 : 78
+3 : 313
+4 : 240
+5 : 51
+6 : 5
+7 : 1
+8 : 1
+9 : 1
+TIEPO TOMADO : 0.0076 seg
+Maximum resident set size (kbytes): 14344
+
+3) Dificil
+
+Estado inicial
+10 0 1 2 3 4 5 6 7 8 9
+GOAL : 0 1 2 3 4 5 6 7 8 9 10 
+NODOS POR ALTURA:
+0 : 1
+1 : 12
+2 : 102
+3 : 784
+4 : 5719
+5 : 27769
+6 : 28599
+7 : 5231
+8 : 214
+9 : 11
+10 : 2
+11 : 1
+12 : 1
+TIEPO TOMADO : 0.9197 seg
+Maximum resident set size (kbytes): 96596
+
+Algoritmo:
+IDA* con maximo de PDBs
+
+
+1) Facil:
+
+Estado inicial:
+7 6 9 8 0 2 10 1 5 4 3
+GOAL : 0 1 2 3 4 5 6 7 8 9 10
+NODOS POR ALTURA:
+0 : 1
+1 : 1
+2 : 1
+3 : 1
+4 : 1
+5 : 1
+TIEPO TOMADO : 0.0001 seg
+Maximum resident set size (kbytes): 13652
+
+2) Medio
+
+Estado inicial:
+10 0 1 9 2 8 3 7 6 5 4
+GOAL : 0 1 2 3 4 5 6 7 8 9 10
+NODOS POR ALTURA:
+0 : 4
+1 : 31
+2 : 136
+3 : 457
+4 : 476
+5 : 145
+6 : 20
+7 : 1
+8 : 1
+9 : 1
+TIEPO TOMADO : 0.0119 seg
+Maximum resident set size (kbytes): 13748
+
+
+3) Dificil
+
+Estado inicial
+10 0 1 2 3 4 5 6 7 8 9
+GOAL : 0 1 2 3 4 5 6 7 8 9 10 
+NODOS POR ALTURA:
+0 : 7
+1 : 66
+2 : 605
+3 : 4885
+4 : 34027
+5 : 164920
+6 : 291258
+7 : 117237
+8 : 26798
+9 : 506
+10 : 1
+11 : 1
+12 : 1
+TIEPO TOMADO : 6.0385 seg
+Maximum resident set size (kbytes): 18744

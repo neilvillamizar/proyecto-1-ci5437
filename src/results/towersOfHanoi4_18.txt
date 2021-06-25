@@ -1,0 +1,201 @@
+Resultados para towers of hanoi 4 - 18:
+
+casos d=005
+
+estado:
+0 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+
+alg: A* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 1
+1 : 3
+2 : 3
+3 : 1
+TIEPO TOMADO : 0.0001 seg
+Maximum resident set size (kbytes): 57520
+
+alg: IDA* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 3
+1 : 5
+2 : 7
+3 : 1
+TIEPO TOMADO : 0.0002 seg
+Maximum resident set size (kbytes): 57396
+
+estado:
+0 0 0 1 0 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+
+alg: A* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 1
+1 : 5
+2 : 9
+3 : 6
+4 : 1
+TIEPO TOMADO : 0.0002 seg
+Maximum resident set size (kbytes): 57508
+
+alg: IDA* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 3
+1 : 10
+2 : 18
+3 : 7
+4 : 1
+TIEPO TOMADO : 0.0004 seg
+Maximum resident set size (kbytes): 57412
+
+estado:
+1 0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+
+alg: A* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 1
+1 : 5
+2 : 2
+3 : 1
+TIEPO TOMADO : 0.0001 seg
+Maximum resident set size (kbytes): 57480
+
+alg: IDA* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 3
+1 : 6
+2 : 3
+3 : 1
+TIEPO TOMADO : 0.0001 seg
+Maximum resident set size (kbytes): 57308
+
+casos d=015
+
+estado:
+0 0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+
+alg: A* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 1
+1 : 6
+2 : 19
+3 : 44
+4 : 87
+5 : 143
+6 : 92
+7 : 15
+8 : 1
+TIEPO TOMADO : 0.0047 seg
+Maximum resident set size (kbytes): 57808
+
+alg: IDA* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 7
+1 : 29
+2 : 111
+3 : 382
+4 : 1136
+5 : 2393
+6 : 2525
+7 : 761
+8 : 1
+TIEPO TOMADO : 0.0628 seg
+Maximum resident set size (kbytes): 57544
+
+estado:
+1 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+
+alg: A* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 1
+1 : 5
+2 : 12
+3 : 20
+4 : 7
+5 : 1
+TIEPO TOMADO : 0.0005 seg
+Maximum resident set size (kbytes): 57536
+
+alg: IDA* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 4
+1 : 11
+2 : 26
+3 : 17
+4 : 7
+5 : 1
+TIEPO TOMADO : 0.0006 seg
+Maximum resident set size (kbytes): 57304
+
+estado:
+0 1 0 0 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+
+alg: A* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 1
+1 : 6
+2 : 19
+3 : 36
+4 : 47
+5 : 6
+6 : 1
+TIEPO TOMADO : 0.0012 seg
+Maximum resident set size (kbytes): 57500
+
+alg: IDA* (max pdb)
+goal: true
+NODOS POR ALTURA:
+0 : 5
+1 : 20
+2 : 70
+3 : 182
+4 : 291
+5 : 129
+6 : 1
+TIEPO TOMADO : 0.0057 seg
+Maximum resident set size (kbytes): 57416
+
+
+case d=2000000
+
+estado:
+0 0 0 1 0 1 0 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 1 0 0 0 0 1 0 1 0 0 0
+
+alg: A* (max pdb)
+goal: false
+Command terminated by signal 9
+User time (seconds): 395.29
+System time (seconds): 41.09
+Elapsed (wall clock) time (h:mm:ss or m:ss): 7:17.55
+Maximum resident set size (kbytes): 12218036
+(Uso las 12 GB de ram)
+
+alg: IDA* (max pdb)
+goal: false
+NODOS POR ALTURA:
+0 : 15
+1 : 80
+2 : 346
+3 : 1469
+4 : 6180
+5 : 25452
+6 : 102305
+7 : 401729
+8 : 1529999
+9 : 5575167
+10 : 18943470
+11 : 56573520
+12 : 123288356
+13 : 94784638
+14 : 8186551
+TIEPO TOMADO : 1800.0001 seg
+Maximum resident set size (kbytes): 60480

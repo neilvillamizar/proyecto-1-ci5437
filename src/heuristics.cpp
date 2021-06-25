@@ -81,6 +81,7 @@ int max_heuristic(node *u) {
             return INF();
         mx = max(mx, *val);
     }
+    delete aux;
     return mx;
 }
 
@@ -95,6 +96,7 @@ int additive_heuristic(node *u) {
             return INF();
         sm += *val;
     }
+    delete aux;
     return sm;
 }
 
